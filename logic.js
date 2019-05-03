@@ -1,15 +1,14 @@
 // ARRAY OF WORDS
 var gameWords = ["alexander", "hamilton", "duel", "america", "theodosia", "jefferson", "angalica", "writing", "lafayette", "burr", "madison", "eliza", "hercules", "mulligan", "federalist", "washington", "treasury", "george", "reynolds", "peggy", "satisfied", "nonstop", "burn", "kingscollege"];
-var gameWordsLower = gameWords.toLowerCase();
 
-var randomWordGen
 // RANDOM WORD GENERATOR
+var randomWordGen;
 // this will load into the console with a random word from the array when randomWord() is typed in
 // indexRandom will return the [i] that can be used for selecting the word from the array
 function randomWord(gameWords) {
-    return gameWords[Math.floor(Math.random() * gameWords.length)] = randomWordGen;
+    var random = Math.floor(Math.random() * gameWords.length);
+    return gameWords[random] = randomWordGen;
 }
-// Does this call need to be bere?
 randomWord()
 
 
@@ -17,14 +16,10 @@ randomWord()
 function isCorrectGuess(word, letter) {
     var word;
     var letter;
-    if (onkeyup.includes(word)) {
-        alert("you pressed the correct key");
-        // document.write(/insert where the letter will be/);
-        // answer is true
-    } else {
-        alert("wrong");
-        // answer is false
-        // will need to decrease score
+    if (word.indexOf(letter) !== -1) {
+        return true;
+    } else if (word.indexOf(letter) === -1) {
+        return false;
     }
 }
 isCorrectGuess()
@@ -66,11 +61,18 @@ isCorrectGuess()
 //     console.log(event.which);
 // };
 
-
 // // converts all strings to lowercase
 // .toLowerCase()
 
-
+//  if (onkeyup.includes(word)) {
+//         alert("you pressed the correct key");
+//         // document.write(/insert where the letter will be/);
+//         // answer is true
+//     } else {
+//         alert("wrong");
+//         // answer is false
+//         // will need to decrease score
+//     }
 
 
 
