@@ -73,19 +73,38 @@ function setupRound(word) {
 }
 
 
-// UPDATE ROUND
-// function updateRound(setup, letter) {
+// 1.6 UPDATE ROUND ----- NEED TO UPDATE
+function updateRound(setup, letter) {
+        if (isCorrectGuess(setup.word, letter) === false) {
+            setup.guessesLeft--;
+            setup.wrongGuesses.push(letter);
+        }
+        else {
+            fillBlanks(setup.word, setup.puzzleState, letter);
+        }   
+       
+    return setup;
+}
 
-//         if (isCorrectGuess(word, letter) === false) {
-//         setup.guessesLeft = --1;
-//         setup.wrongGuesses = ++1;
-//         } else {
-//             fillBlanks();
-//         }    
-// }
 
+// 1.7 HAS WON ----- NEED TO UPDATE
 
+function hasWon(puzzleState) {
+    for (var i = 0; i < puzzleState.length; i++) {
+        if (puzzleState[i] === "_") {
+            return false;
+        }
+    }
+    return true;
+}
 
+// HAS LOST
+function hasLost(guessesLeft) {
+    if (guessesLeft === 0) {
+        return true;
+    }
+    return false;
+}
 
 
 
