@@ -11,13 +11,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-            <img src="https://i2.wp.com/twistedink.co/wp-content/uploads/2018/01/Hamilton-Logo.jpg?fit=1200%2C1200" width="30" height="30" class="d-inline-block align-top"
-                alt="rise up ">
-            Hamilton Word Guess Game
-        </a>
-    </nav>
+    <!-- removed nav -->
 
     <h1><span id="puzzle-state"></span></h1>
     <h1>Wrong Guesses: <span id="wrong-guesses"></span></h1>
@@ -26,6 +20,7 @@
     <h1>Losses: <span id="loss-counter"></span></h1>
     
 
+    <button onclick="gameReset()">Give up and start over...</button>
 
 
 <script src="logic.js" charset="utf-u"></script>
