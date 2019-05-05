@@ -156,8 +156,8 @@ document.onkeyup = function (evt) {
     var userGuess = evt.keyCode || evt.which;
     keyPressed = String.fromCharCode(userGuess).toLowerCase();
     console.log("The " + keyPressed + " key was pressed");
-    return keyPressed;
-}
+    
+
 isCorrectGuess(myGame.round.word, keyPressed);
 fillBlanks(myGame.round.word, myGame.round.puzzleState, keyPressed);
 // updateRound("need setup input -- this is the whole object?", keyPressed);
@@ -189,7 +189,7 @@ var guessesLeftText = document.createTextNode(myGame.round.guessesLeft);
 var guessesLeft = document.getElementById("guesses-left").appendChild(guessesLeftText);
 
 
-
+}
 
 
 
