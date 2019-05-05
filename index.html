@@ -11,8 +11,105 @@
 </head>
 
 <body>
-    hello world
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="https://i2.wp.com/twistedink.co/wp-content/uploads/2018/01/Hamilton-Logo.jpg?fit=1200%2C1200" width="30" height="30" class="d-inline-block align-top"
+                alt="rise up ">
+            Hamilton Word Guess Game
+        </a>
+    </nav>
 
+    <h1><span id="puzzle-state"></span></h1>
+    <h1>Wrong Guesses: <span id="wrong-guesses"></span></h1>
+    <h1>Guesses Left: <span id="guesses-left"></span></h1>
+    <h1>Wins: <span id="win-counter"></span></h1>
+    <h1>Losses: <span id="loss-counter"></span></h1>
+    
+
+
+
+<script>
+// logs the object
+console.log(myGame)
+
+// Uses the ramdom word and displays the empty blanks
+var puzzleState = document.getElementById("puzzle-state").innerHTML = myGame.round.puzzleState.join(" ");
+
+// Displays the updated object for wrong guesses from user
+var wrongGuessesText = document.createTextNode(myGame.round.wrongGuesses);
+var wrongGuesses = document.getElementById("wrong-guesses").appendChild(wrongGuessesText);
+
+// Displays the updated object for total wins
+var winsText = document.createTextNode(myGame.wins);
+var wins = document.getElementById("win-counter").appendChild(winsText);
+
+// Displays the updated object for total losses
+var lossesText = document.createTextNode(myGame.losses);
+var losses = document.getElementById("loss-counter").appendChild(lossesText);
+
+// Displays the updated object for number of guesses left
+var guessesLeftText = document.createTextNode(myGame.round.guessesLeft);
+var guessesLeft = document.getElementById("guesses-left").appendChild(guessesLeftText);
+
+
+// CLICK EVENTS
+// need to capture the key that was pressed by the user and store it
+    // document.onkeyup = function (evt) {
+    //     var charCode = evt.keyCode;
+    //     var keyPressed = String.fromCharCode(charCode).toLowerCase();
+    //     console.log("The " + keyPressed + " key was pressed");
+    //     // this letter needs to be passed as the letter argument....
+    //     isCorrectGuess(myGame.round.word, keyPressed);
+    // };
+
+// ATTEMPT 1 TO CAPTURE KEY PRESS
+    // document.onkeyup = function (evt) {
+    //     evt = evt || window.event;
+    //     var userGuess = evt.keyCode || evt.which;
+    //     var keyPressed = String.fromCharCode(userGuess).toLowerCase();
+    //     console.log("The " + keyPressed + " key was pressed");
+    //     return fillBlanks(myGame.round.word, myGame.round.puzzleState, keyPressed);
+    // }
+    
+// ATTEMPT 2
+    // var log = document.getElementById('wrong-guesses');
+    // document.addEventListener('keyup', logKey);
+    // console.log("The " + log.textContent + " key was pressed");
+    // function logKey(e) {
+    //     log.textContent += fillBlanks(myGame.round.word, myGame.round.puzzleState, logKey);
+    // }
+
+// OTHER OPTION
+    //  document.onkeyup = function (event) {
+    //         var userGuess = event.keyCode;
+    //         var keyPressed = String.fromCharCode(userGuess).toLowerCase();
+    //         console.log("The " + keyPressed + " key was pressed");
+    //         return isCorrectGuess(myGame.round.word, keyPressed);
+    //     }
+        
+
+// NOTES ABOUT ACTIONS
+    // puzzleState / ("puzzle-state")
+
+    // wrongGuesses / ("wrong-guesses")
+    // myGame.round.guessesLeft.onkeyup = isCorrectGuess() {
+    //     if (true) {
+    //         // update the letter that was clicked
+    //     }
+    // // };
+
+    // wins / ("win-counter")
+
+    // losses / ("loss-counter")
+
+    // guessesLeft / ("guesses-left")
+
+
+
+
+
+
+</script>
 </body>
 
 </html>

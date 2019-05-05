@@ -9,25 +9,25 @@ function randomWord(gameWords) {
 
 
 // 1.2 CHECK IF INPUT IS A CORRECT LETTER
-function isCorrectGuess(word, letter) {
-    var word;
-    var letter;
-    if (word.indexOf(letter) !== -1) {
-        return true;
-    } else if (word.indexOf(letter) === -1) {
-        return false;
-    }
-}
-
-// FROM ELIZA CHECK IF INPUT IS A CORRECT LETTER
-// var isCorrectGuess = function(word, letter) {
-//     for (var i = 0; i < word.length; i++) {
-//         if (word[i] === letter) {
-//             return true;
-//         }
+// function isCorrectGuess(word, letter) {
+//     var word;
+//     var letter;
+//     if (word.indexOf(letter) !== -1) {
+//         return true;
+//     } else if (word.indexOf(letter) === -1) {
+//         return false;
 //     }
-//     return false;
 // }
+
+// FROM ELIZA CHECK IF INPUT IS A CORRECT LETTER (but started with function and not var)
+function isCorrectGuess(word, letter) {
+    for (var i = 0; i < word.length; i++) {
+        if (word[i] === letter) {
+            return true;
+        }
+    }
+    return false;
+}
 
 
 
@@ -62,7 +62,7 @@ function setupRound(word) {
         word: word,
         guessesLeft: 9,
         wrongGuesses: [],
-        puzzleState: [],
+        puzzleState: getBlanks(word),
     }
     return setup;
 }
@@ -141,35 +141,8 @@ function startNewRound(game) {
 
 
 // 1.12 MY GAME
+var myGame = setupGame(gameWords, 0, 0);
 
-var myGame = setupGame(gameWords);
-
-// var myGame = {
-//     words: ___,
-//     wins: ___,
-//     losses: ___,
-//     round: ___,
-// }
-
-// function myGame(game) {
-//     myGame = {
-//         words: game.words,
-//         wins: game.wins,
-//         losses: game.losses,
-//         round: game.round,
-//     }
-//     return myGame;
-// }
-
-
-// var myGame = setupGame(gameWords, wins, losses) {
-//     words: game.words,
-//     wins: game.wins,
-//     losses: game.losses,
-//     round: game.round,
-//     }
-//     return myGame;
-// }
 
 
 
