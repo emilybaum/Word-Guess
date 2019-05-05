@@ -150,6 +150,11 @@ var myGame = setupGame(gameWords, 0, 0);
 // logs the object
 console.log(myGame)
 
+// Uses the ramdom word and displays the empty blanks
+var puzzleState = document.getElementById("puzzle-state").innerHTML = myGame.round.puzzleState.join(" ");
+
+
+// start of key being pressed by the user
 var keyPressed;
 document.onkeyup = function (evt) {
     evt = evt || window.event;
@@ -157,36 +162,36 @@ document.onkeyup = function (evt) {
     keyPressed = String.fromCharCode(userGuess).toLowerCase();
     console.log("The " + keyPressed + " key was pressed");
     
+    isCorrectGuess(myGame.round.word, keyPressed);
+    fillBlanks(myGame.round.word, myGame.round.puzzleState, keyPressed);
+    // updateRound(myGame, keyPressed);
+    hasWon(myGame.round.puzzleState);
+    hasLost(myGame.round.guessesLeft);
+    // isEndOfRound(myGame);
 
-isCorrectGuess(myGame.round.word, keyPressed);
-fillBlanks(myGame.round.word, myGame.round.puzzleState, keyPressed);
-// updateRound("need setup input -- this is the whole object?", keyPressed);
-hasWon(myGame.round.puzzleState);
-hasLost(myGame.round.guessesLeft);
-// isEndOfRound("need setup input -- this is the whole object?");
+    // Uses the ramdom word and displays the empty blanks
+    // var puzzleState = 
+    document.getElementById("puzzle-state").innerHTML = myGame.round.puzzleState.join(" ");
 
+    // Displays the updated object for wrong guesses from user
+    var wrongGuessesText = document.createTextNode(myGame.round.wrongGuesses);
+    // var wrongGuesses = 
+    document.getElementById("wrong-guesses").appendChild(wrongGuessesText);
 
+    // Displays the updated object for total wins
+    var winsText = document.createTextNode(myGame.wins);
+    // var wins = 
+    document.getElementById("win-counter").appendChild(winsText);
 
+    // Displays the updated object for total losses
+    var lossesText = document.createTextNode(myGame.losses);
+    // var losses = 
+    document.getElementById("loss-counter").appendChild(lossesText);
 
-
-// Uses the ramdom word and displays the empty blanks
-var puzzleState = document.getElementById("puzzle-state").innerHTML = myGame.round.puzzleState.join(" ");
-
-// Displays the updated object for wrong guesses from user
-var wrongGuessesText = document.createTextNode(myGame.round.wrongGuesses);
-var wrongGuesses = document.getElementById("wrong-guesses").appendChild(wrongGuessesText);
-
-// Displays the updated object for total wins
-var winsText = document.createTextNode(myGame.wins);
-var wins = document.getElementById("win-counter").appendChild(winsText);
-
-// Displays the updated object for total losses
-var lossesText = document.createTextNode(myGame.losses);
-var losses = document.getElementById("loss-counter").appendChild(lossesText);
-
-// Displays the updated object for number of guesses left
-var guessesLeftText = document.createTextNode(myGame.round.guessesLeft);
-var guessesLeft = document.getElementById("guesses-left").appendChild(guessesLeftText);
+    // Displays the updated object for number of guesses left
+    var guessesLeftText = document.createTextNode(myGame.round.guessesLeft);
+    // var guessesLeft = 
+    document.getElementById("guesses-left").appendChild(guessesLeftText);
 
 
 }
