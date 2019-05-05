@@ -9,17 +9,6 @@ function randomWord(gameWords) {
 
 
 // 1.2 CHECK IF INPUT IS A CORRECT LETTER
-// function isCorrectGuess(word, letter) {
-//     var word;
-//     var letter;
-//     if (word.indexOf(letter) !== -1) {
-//         return true;
-//     } else if (word.indexOf(letter) === -1) {
-//         return false;
-//     }
-// }
-
-// FROM ELIZA CHECK IF INPUT IS A CORRECT LETTER (but started with function and not var)
 function isCorrectGuess(word, letter) {
     for (var i = 0; i < word.length; i++) {
         if (word[i] === letter) {
@@ -80,6 +69,17 @@ function updateRound(setup, letter) {
        
     return setup;
 }
+
+// from Megan!!!
+// function updateRound(setup, letter) {
+//     if (isCorrectGuess(round.word, letter)) {
+//         setup.puzzleState = fillBlanks(round.word, round.puzzleState, letter);
+//     }
+//     else {
+//         round.guessesLeft = round.guessesLeft - 1;
+//         round.wrongGuesses.push(letter);
+//     }
+// }
 
 
 // 1.7 HAS WON
@@ -144,14 +144,29 @@ function startNewRound(game) {
 var myGame = setupGame(gameWords, 0, 0);
 
 
-
 // USER INTERACTIONS
-
-// logs the object
-console.log(myGame)
 
 // Uses the ramdom word and displays the empty blanks
 var puzzleState = document.getElementById("puzzle-state").innerHTML = myGame.round.puzzleState.join(" ");
+
+// // Displays the updated object for wrong guesses from user
+var wrongGuessesText = document.createTextNode(myGame.round.wrongGuesses);
+document.getElementById("wrong-guesses").appendChild(wrongGuessesText);
+
+// // Displays the updated object for total wins
+var winsText = document.createTextNode(myGame.wins);
+document.getElementById("win-counter").appendChild(winsText);
+
+// // Displays the updated object for total losses
+var lossesText = document.createTextNode(myGame.losses);
+document.getElementById("loss-counter").appendChild(lossesText);
+
+// // Displays the updated object for number of guesses left
+var guessesLeftText = document.createTextNode(myGame.round.guessesLeft);
+document.getElementById("guesses-left").appendChild(guessesLeftText);
+
+// logs the object for this game round
+console.log(myGame);
 
 
 // start of key being pressed by the user
@@ -162,9 +177,10 @@ document.onkeyup = function (evt) {
     keyPressed = String.fromCharCode(userGuess).toLowerCase();
     console.log("The " + keyPressed + " key was pressed");
     
+    // call back the logic
     isCorrectGuess(myGame.round.word, keyPressed);
     fillBlanks(myGame.round.word, myGame.round.puzzleState, keyPressed);
-    // updateRound(myGame, keyPressed);
+    updateRound(myGame.round, keyPressed);
     hasWon(myGame.round.puzzleState);
     hasLost(myGame.round.guessesLeft);
     // isEndOfRound(myGame);
@@ -191,9 +207,9 @@ document.onkeyup = function (evt) {
     // Displays the updated object for number of guesses left
     var guessesLeftText = document.createTextNode(myGame.round.guessesLeft);
     // var guessesLeft = 
-    document.getElementById("guesses-left").appendChild(guessesLeftText);
+    document.getElementById("guesses-left").appendChild(guessesLeftText); 
 
-
+    console.log(myGame);
 }
 
 
