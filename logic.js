@@ -135,12 +135,24 @@ function startNewRound(game) {
     if (hasWon(puzzleState) === true) {
         ++game.wins;
         alert("You did it! The word is " + game.round.word);
+        // should the array and wrong guesses clear out here?
     }
     else {
         ++game.losses;
         alert("Sorry, the word was " + game.round.word);
     }
-    return game;
+    return game; 
+}
+
+function updatePuzzle(puzzleState, guessesLeft) {
+    if (hasWon(puzzleState) === true) {
+        // blanksArray to be reset like it does for starting a new game
+        // wrong guesses to be cleared out like srarting a new game
+    }
+    else if (hasLost(guessesLeft) === true) {
+        // blanksArray to be reset like it does for starting a new game
+        // wrong guesses to be cleared out like srarting a new game
+    }
 }
 
 
@@ -190,39 +202,40 @@ document.onkeyup = function (evt) {
     isEndOfRound(myGame.round);
 
     // Uses the ramdom word and displays the empty blanks
-    // var puzzleState = 
+    // This puzzle-state has already been defined at the top of the page, but if I take it out, then the letter don't update in the puzzle...
     document.getElementById("puzzle-state").innerHTML = myGame.round.puzzleState.join(" ");
 
     // Displays the updated object for wrong guesses from user
     var wrongGuessesText = document.createTextNode(myGame.round.wrongGuesses);
     // var wrongGuesses = 
     document.getElementById("wrong-guesses").appendChild(wrongGuessesText);
-    // document.getElementById("wrong-guesses".replaceChild(myGame.round.wrongGuesses, wrongGuessesText)
 
-    // // Displays the updated object for total wins
+    // Displays the updated object for total wins
     var winsText = document.createTextNode(myGame.wins);
-    // // var wins = 
     document.getElementById("win-counter").appendChild(winsText);
 
-    // // Displays the updated object for total losses
+    // Displays the updated object for total losses
     var lossesText = document.createTextNode(myGame.losses);
-    // // var losses = 
     document.getElementById("loss-counter").appendChild(lossesText);
 
-    // // Displays the updated object for number of guesses left
+    // Displays the updated object for number of guesses left
     var guessesLeftText = document.createTextNode(myGame.round.guessesLeft);
-    // // var guessesLeft = 
     document.getElementById("guesses-left").appendChild(guessesLeftText);
 
     console.log(myGame);
-}
+
+} // ------------ end of onclick event
+
 // CHECKS IF GUESSES ARE LEFT OR HAS WON
 isEndOfRound(myGame.round);
 
 // RESET GAME
 function gameReset() {
+    // setupRound(myGame.words)
+    updateRound(myGame.round, keyPressed);
     startNewRound(myGame);
-}
+    // randomWord(myGame.words);
+} // ------------ end of button click
 
 
 // setup = myGame.round
