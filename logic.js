@@ -216,7 +216,6 @@ document.onkeyup = function (evt) {
 
     console.log(myGame);
 }
-
 // CHECKS IF GUESSES ARE LEFT OR HAS WON
 isEndOfRound(myGame.round);
 
