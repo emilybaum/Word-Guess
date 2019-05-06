@@ -48,10 +48,10 @@ function fillBlanks(word, puzzleState, letter) {
 // 1.5 SETUP ROUND ******
 function setupRound(word) {
     var setup = {
-        word: word,
-        guessesLeft: 9,
-        wrongGuesses: [],
-        puzzleState: getBlanks(word),
+        word : word,
+        guessesLeft : 9,
+        wrongGuesses : [],
+        puzzleState : getBlanks(word),
     }
     return setup;
 }
@@ -62,9 +62,11 @@ function updateRound(setup, letter) {
         if (isCorrectGuess(setup.word, letter) === false) {
             --setup.guessesLeft;
             setup.wrongGuesses.push(letter);
+            console.log("updateRound ran for wrong guess");
         }
         else {
             fillBlanks(setup.word, setup.puzzleState, letter);
+            console.log("updateRound ran to fill in blanks");
         }   
        
     return setup;
@@ -95,16 +97,16 @@ function hasWon(puzzleState) {
 // 1.8 HAS LOST
 function hasLost(guessesLeft) {
     if (guessesLeft === 0) {
-        alert("this hasLost is true")
+        alert("hasLost() is true");
         return true;
     }
     return false;
 }
 
+
 // 1.9 IS END OF ROUND
 function isEndOfRound(setup) {
     if (setup.guessesLeft === 0) {
-        alert("this isEndOfRound is true")
         return true;
     }
     if (hasWon(setup.puzzleState)) {
@@ -118,10 +120,10 @@ function isEndOfRound(setup) {
 // 1.10 SETUP GAME
 function setupGame(gameWords, wins, losses) {
     var game = {
-        words: gameWords,
-        wins: wins,
-        losses: losses,
-        round: setupRound(randomWord(gameWords)),
+        words : gameWords,
+        wins : wins,
+        losses : losses,
+        round : setupRound(randomWord(gameWords)),
     }
     return game;
 }
@@ -178,7 +180,7 @@ document.onkeyup = function (evt) {
     var userGuess = evt.keyCode || evt.which;
     keyPressed = String.fromCharCode(userGuess).toLowerCase();
     console.log("The " + keyPressed + " key was pressed");
-  
+
     // call back the logic
     isCorrectGuess(myGame.round.word, keyPressed);
     fillBlanks(myGame.round.word, myGame.round.puzzleState, keyPressed);
@@ -210,10 +212,13 @@ document.onkeyup = function (evt) {
     // // Displays the updated object for number of guesses left
     var guessesLeftText = document.createTextNode(myGame.round.guessesLeft);
     // // var guessesLeft = 
-    document.getElementById("guesses-left").appendChild(guessesLeftText); 
+    document.getElementById("guesses-left").appendChild(guessesLeftText);
 
     console.log(myGame);
 }
+
+// CHECKS IF GUESSES ARE LEFT OR HAS WON
+isEndOfRound(myGame.round);
 
 // RESET GAME
 function gameReset() {
@@ -221,5 +226,4 @@ function gameReset() {
 }
 
 
-
-
+// setup = myGame.round
