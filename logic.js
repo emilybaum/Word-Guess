@@ -41,7 +41,7 @@ function fillBlanks(word, puzzleState, letter) {
                 puzzleState[i] = letter;
             }
         }
-    }
+    } 
     return puzzleState;
 }
 
@@ -102,6 +102,12 @@ function isEndOfRound(setup) {
     }
     return false;
 }
+
+// function isReset (pushreset) {
+//     if (pushreset === 0) {
+//         return true;
+//     }
+// }
 
 
 
@@ -198,21 +204,21 @@ document.onkeyup = function (evt) {
 } // ------------ end of onclick event
 
 
+// setTimeout(hasWon(), 3000);
+
+
+
+
 // RESET GAME
-function gameReset() {
-    setupRound(myGame.words)
-    hasWon(myGame.round.puzzleState);
-    updateRound(myGame.round, keyPressed);
-    startNewRound(myGame);
-    randomWord(myGame.words);
-    isEndOfRound(myGame.round);
-    hasLost(myGame.round.guessesLeft);
+function gameReset(myGame) {
+    alert("reset pushed")
+    myGame.round.guessesLeft = 0;
+    if (isReset(0)) {
+        myGame = startNewRound(myGame);
+        myGame.round = setupRound(randomWord(gameWords));
+        alert("reset pushed")
+    }
 
-
-    // if (isEndOfRound(myGame.round)) {
-    //     myGame = startNewRound(myGame);
-    //     myGame.round = setupRound(randomWord(gameWords));
-    // }
 } // ------------ end of button click
 
 

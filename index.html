@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Word Guess</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <script src="logic.js"></script>
 </head>
 
@@ -19,46 +20,55 @@
         <div class="row"> 
             <!-- content container -->
             <div class="col-sm-12 mx-auto">
-                <h1 class="text-center card-header mt-3 mb-5">Hamilton Word Guess</h1>
-
-                <!-- row for main game content -->
-                <div class="row"> 
-
-                    <!-- puzzle state blanks -->
-                    <div class="col-sm-6 text-center my-auto p-2">
-                        <h2><span id="puzzle-state"> </span></h2>
-                    </div>
-
-                    <!-- keeping track of game state -->
-                    <div class="col-sm-6">
-                        <div class="row"> <!-- row for wrong guess letters -->
-                            <div class="col-sm">
-                                <div>Wrong Guesses: <span id="wrong-guesses"></span></div>
-                            </div>
-                        </div>
-
-                        <div class="row"> <!-- row for tracking game elements -->
-                            <div class="col-sm">
-                                <div>Guesses Left: <span id="guesses-left">9</span></div>
-                                <div>Wins: <span id="win-counter">0</span></div>
-                                <div>Losses: <span id="loss-counter">0</span></div>
-                            </div>
-                        </div>
-                    </div> <!-- end keep track of game state -->
-                </div> <!-- end main game content -->
-    
+                
+                <h1 class="text-center card-header mt-3 mb-5 title-text-eb"> <img src="images/hamilton-title-notag.png" class="title-eb"> Word Guess</h1>
             </div> <!-- end content container -->
-            
-       
-
         </div> <!-- end row for header -->
+
+        <!-- row for main game content -->
+        <div class="row"> 
+
+            <!-- puzzle state blanks -->
+            <div class="col-md-6 text-center my-auto p-2 section-eb">
+                <h2><span id="puzzle-state"> </span></h2>
+            </div>
+
+            <!-- keeping track of game state -->
+            <div class="col-md-6">
+
+                <!-- row for wrong guess letters -->
+                <div class="row"> 
+                    <div class="col-sm ml-5 section-eb">
+                        <div>Wrong Guesses: <span id="wrong-guesses"></span></div>
+                    </div>
+                </div>
+
+                <!-- row for tracking game elements -->
+                <div class="row"> 
+                    <div class="col-sm ml-5 section-eb">
+                        <div>Guesses Left: <span id="guesses-left">9</span></div>
+                        <div>Wins: <span id="win-counter">0</span></div>
+                        <div>Losses: <span id="loss-counter">0</span></div>
+                    </div>
+                </div>
+                
+                
+            </div> <!-- end keep track of game state -->
+            
+        </div> <!-- end main game content -->
+    
+      
 
         <!-- button row -->
         <div class="row">
-            <div class="col-sm-12 mx-auto text-center p-5">
+            <div class="col-sm-12 mx-auto text-center mt-3 p-2 button-container-eb">
                 <div><button onclick="gameReset()">Give up and start over...</button></div>
             </div>
         </div> <!-- end button row-->
+
+
+<!-- lottery ny: https://www.luckyseat.com/hamilton-ny/ -->
+
 
     </div> <!-- end main container-->
 

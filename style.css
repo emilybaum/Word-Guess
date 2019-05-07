@@ -1,0 +1,30 @@
+body {
+    background-image: url(images/hamilton-background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+/* .section-eb {
+    background-color: bisque;
+    opacity: 0.5;
+} */
+
+.title-eb {
+    width: 200px;
+}
+
+.title-text-eb {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h1, div {
+    color: white;
+}
+
+.button-container-eb {
+    border-top: 3px solid black;
+}
+
+
+/* C:\Users\ebaumgar\Desktop\Columbia\Word-Guess\style.css */
