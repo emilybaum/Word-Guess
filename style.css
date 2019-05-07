@@ -18,7 +18,7 @@ body {
     font-family: 'Courier New', Courier, monospace;
 }
 
-h1, div {
+h1 {
     color: white;
 }
 
@@ -26,5 +26,20 @@ h1, div {
     border-top: 3px solid black;
 }
 
+.display-hidden-eb {
+    display: none;
+}
+
+.display-visible-eb {
+    display: block;
+}
+
+.para-eb {
+    color: white;
+}
+
+/* .puzzle-eb {
+
+} */
 
 /* C:\Users\ebaumgar\Desktop\Columbia\Word-Guess\style.css */

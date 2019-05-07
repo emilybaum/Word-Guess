@@ -30,7 +30,7 @@
 
             <!-- puzzle state blanks -->
             <div class="col-md-6 text-center my-auto p-2 section-eb">
-                <h2><span id="puzzle-state"> </span></h2>
+                <h2 class="puzzle-eb"><span id="puzzle-state"> </span></h2>
             </div>
 
             <!-- keeping track of game state -->
@@ -39,16 +39,16 @@
                 <!-- row for wrong guess letters -->
                 <div class="row"> 
                     <div class="col-sm ml-5 section-eb">
-                        <div>Wrong Guesses: <span id="wrong-guesses"></span></div>
+                        <p class="mb-0 para-eb">Wrong Guesses: <span id="wrong-guesses"></span></p>
                     </div>
                 </div>
 
                 <!-- row for tracking game elements -->
                 <div class="row"> 
                     <div class="col-sm ml-5 section-eb">
-                        <div>Guesses Left: <span id="guesses-left">9</span></div>
-                        <div>Wins: <span id="win-counter">0</span></div>
-                        <div>Losses: <span id="loss-counter">0</span></div>
+                        <p class="mb-0 para-eb" >Guesses Left: <span id="guesses-left">9</span></p>
+                        <p class="mb-0 para-eb" >Wins: <span id="win-counter">0</span></p>
+                        <p class="mb-0 para-eb" >Losses: <span id="loss-counter">0</span></p>
                     </div>
                 </div>
                 
@@ -56,6 +56,43 @@
             </div> <!-- end keep track of game state -->
             
         </div> <!-- end main game content -->
+
+        <!-- row for hidden elements -->
+        <div class="row">
+
+            <!-- hidden column FIRST -->
+            <div class="col-sm-1 mx-auto">
+            </div> <!-- end hidden column FIRST -->
+
+            <!-- hidden column 1 -->
+            <div class="col-sm-2 mx-auto">
+                <div id="card1-eb" class="card display-hidden-eb">
+                    <div class="card-body" >
+                        Test.
+                    </div>
+                </div>
+            </div> <!-- end hidden column 1 -->
+
+            <!-- hidden column 2 -->
+            <div class="col-sm-2 mx-auto">
+                <!-- insert card -->
+            </div> <!-- end hidden column 2 -->
+
+            <!-- hidden column 3 -->
+            <div class="col-sm-2 mx-auto">
+                <!-- insert card -->
+            </div> <!-- end hidden column 3 -->
+
+            <!-- hidden column 4 -->
+            <div class="col-sm-2 mx-auto">
+                <!-- insert card -->
+            </div> <!-- end hidden column 4 -->
+
+            <!-- hidden column LAST -->
+            <div class="col-sm-1 mx-auto">
+            </div> <!-- end hidden column LAST -->
+
+        </div> <!-- end row for header -->
     
       
 

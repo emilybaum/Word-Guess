@@ -63,11 +63,9 @@ function updateRound(setup, letter) {
         if (isCorrectGuess(setup.word, letter) === false) {
             --setup.guessesLeft;
             setup.wrongGuesses.push(letter);
-            console.log("updateRound ran for wrong guess");
         }
         else {
             fillBlanks(setup.word, setup.puzzleState, letter);
-            console.log("updateRound ran to fill in blanks");
         }   
        
     return setup;
@@ -150,6 +148,9 @@ var puzzleState = document.getElementById("puzzle-state").innerHTML = myGame.rou
 console.log(myGame);
 
 
+/**
+ * Provides some feature.
+ */
 function updateHTML() {
     // Uses the ramdom word and displays the empty blanks
     document.getElementById("puzzle-state").innerText = myGame.round.puzzleState.join(" ");
@@ -166,14 +167,12 @@ function updateHTML() {
     // Displays the updated object for number of guesses left
     document.getElementById("guesses-left").innerText = myGame.round.guessesLeft;
 
-    console.log(myGame);
 }
 
 // start of key being pressed by the user
 var keyPressed;
 document.onkeyup = function (evt) {
     keyPressed = evt.key.toLowerCase() 
-    // console.log("The " + keyPressed + " key was pressed!");
     var flag = false
     for (var i = 0; i < validChar.length; i++) {
         
@@ -183,7 +182,7 @@ document.onkeyup = function (evt) {
         }
     }
     if (flag === false) {
-        alert("Only use valid characters for your guess! You jsut wasted a guess");
+        alert("Only use valid characters for your guess! You just wasted a guess");
     }
 
 
@@ -206,6 +205,8 @@ document.onkeyup = function (evt) {
     // --------- end CALL BACK THE LOGIC
 
     updateHTML();
+
+    displayCard1();
         
 
 } // ------------ end of onclick event
@@ -230,4 +231,13 @@ function gameReset() {
 
 } // ------------ end of button click
 
-
+// edit this to make button display or not disaply 
+// need to add a class for display to be listed AFTER the 
+function displayCard1() {
+    var x = document.getElementById("#card1-eb");
+    if (myGame.round.wins >= 1) {
+        element.classList.add("display-visible-eb")
+        console.log("displayCard ran")
+    }        
+    
+}
