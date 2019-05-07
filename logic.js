@@ -1,5 +1,6 @@
 // 1.0 ARRAY OF WORDS
 var gameWords = ["alexander", "hamilton", "duel", "america", "theodosia", "jefferson", "angalica", "writing", "lafayette", "burr", "madison", "eliza", "hercules", "mulligan", "federalist", "washington", "treasury", "george", "reynolds", "peggy", "satisfied", "nonstop", "burn", "kingscollege"];
+var validChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 // 1.1 RANDOM WORD GENERATOR
 function randomWord(gameWords) {
@@ -147,6 +148,20 @@ console.log(myGame);
 var keyPressed;
 document.onkeyup = function (evt) {
     keyPressed = evt.key.toLowerCase() 
+    console.log("The " + keyPressed + " key was pressed!");
+    var flag = false
+    for (var i = 0; i < validChar.length; i++) {
+        
+        if (keyPressed === validChar[i]) {
+            flag = true
+            
+        }
+    }
+    if (flag === false) {
+        alert("Only use valid characters for your guess! You jsut wasted a guess");
+    }
+
+
     console.log("The " + keyPressed + " key was pressed");
 
     // CALL BACK THE LOGIC
@@ -192,6 +207,12 @@ function gameReset() {
     randomWord(myGame.words);
     isEndOfRound(myGame.round);
     hasLost(myGame.round.guessesLeft);
+
+
+    // if (isEndOfRound(myGame.round)) {
+    //     myGame = startNewRound(myGame);
+    //     myGame.round = setupRound(randomWord(gameWords));
+    // }
 } // ------------ end of button click
 
 

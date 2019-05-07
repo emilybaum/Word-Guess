@@ -12,13 +12,55 @@
 
 <body>
 
-    <h1><span id="puzzle-state"> </span></h1>
-    <h1>Wrong Guesses: <span id="wrong-guesses"></span></h1>
-    <h1>Guesses Left: <span id="guesses-left">9</span></h1>
-    <h1>Wins: <span id="win-counter">0</span></h1>
-    <h1>Losses: <span id="loss-counter">0</span></h1>
+
+
+    <div class="container">
+        <!-- row for header -->
+        <div class="row"> 
+            <!-- content container -->
+            <div class="col-sm-12 mx-auto">
+                <h1 class="text-center card-header mt-3 mb-5">Hamilton Word Guess</h1>
+
+                <!-- row for main game content -->
+                <div class="row"> 
+
+                    <!-- puzzle state blanks -->
+                    <div class="col-sm-6 text-center my-auto p-2">
+                        <h2><span id="puzzle-state"> </span></h2>
+                    </div>
+
+                    <!-- keeping track of game state -->
+                    <div class="col-sm-6">
+                        <div class="row"> <!-- row for wrong guess letters -->
+                            <div class="col-sm">
+                                <div>Wrong Guesses: <span id="wrong-guesses"></span></div>
+                            </div>
+                        </div>
+
+                        <div class="row"> <!-- row for tracking game elements -->
+                            <div class="col-sm">
+                                <div>Guesses Left: <span id="guesses-left">9</span></div>
+                                <div>Wins: <span id="win-counter">0</span></div>
+                                <div>Losses: <span id="loss-counter">0</span></div>
+                            </div>
+                        </div>
+                    </div> <!-- end keep track of game state -->
+                </div> <!-- end main game content -->
     
-    <button onclick="gameReset()">Give up and start over...</button>
+            </div> <!-- end content container -->
+            
+       
+
+        </div> <!-- end row for header -->
+
+        <!-- button row -->
+        <div class="row">
+            <div class="col-sm-12 mx-auto text-center p-5">
+                <div><button onclick="gameReset()">Give up and start over...</button></div>
+            </div>
+        </div> <!-- end button row-->
+
+    </div> <!-- end main container-->
 
 <script src="logic.js" charset="utf-u"></script>
 
