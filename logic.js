@@ -150,40 +150,7 @@ var puzzleState = document.getElementById("puzzle-state").innerHTML = myGame.rou
 console.log(myGame);
 
 
-// start of key being pressed by the user
-var keyPressed;
-document.onkeyup = function (evt) {
-    keyPressed = evt.key.toLowerCase() 
-    console.log("The " + keyPressed + " key was pressed!");
-    var flag = false
-    for (var i = 0; i < validChar.length; i++) {
-        
-        if (keyPressed === validChar[i]) {
-            flag = true
-            
-        }
-    }
-    if (flag === false) {
-        alert("Only use valid characters for your guess! You jsut wasted a guess");
-    }
-
-
-    console.log("The " + keyPressed + " key was pressed");
-
-    // CALL BACK THE LOGIC
-    isCorrectGuess(myGame.round.word, keyPressed);
-    fillBlanks(myGame.round.word, myGame.round.puzzleState, keyPressed);
-    updateRound(myGame.round, keyPressed);
-    hasWon(myGame.round.puzzleState);
-    hasLost(myGame.round.guessesLeft);
-
-    // CHECKS IF GUESSES ARE LEFT OR HAS WON
-    if (isEndOfRound(myGame.round)){
-        myGame = startNewRound(myGame);
-        myGame.round = setupRound(randomWord(gameWords));
-    }
-    // --------- end CALL BACK THE LOGIC
-
+function updateHTML() {
     // Uses the ramdom word and displays the empty blanks
     document.getElementById("puzzle-state").innerText = myGame.round.puzzleState.join(" ");
 
@@ -200,6 +167,46 @@ document.onkeyup = function (evt) {
     document.getElementById("guesses-left").innerText = myGame.round.guessesLeft;
 
     console.log(myGame);
+}
+
+// start of key being pressed by the user
+var keyPressed;
+document.onkeyup = function (evt) {
+    keyPressed = evt.key.toLowerCase() 
+    // console.log("The " + keyPressed + " key was pressed!");
+    var flag = false
+    for (var i = 0; i < validChar.length; i++) {
+        
+        if (keyPressed === validChar[i]) {
+            flag = true
+            
+        }
+    }
+    if (flag === false) {
+        alert("Only use valid characters for your guess! You jsut wasted a guess");
+    }
+
+
+    console.log("The " + keyPressed + " key was pressed");
+
+
+        // CALL BACK THE LOGIC
+    isCorrectGuess(myGame.round.word, keyPressed);
+    fillBlanks(myGame.round.word, myGame.round.puzzleState, keyPressed);
+    updateRound(myGame.round, keyPressed);
+    hasWon(myGame.round.puzzleState);
+    hasLost(myGame.round.guessesLeft);
+
+    
+    // CHECKS IF GUESSES ARE LEFT OR HAS WON
+    if (isEndOfRound(myGame.round)){
+        myGame = startNewRound(myGame);
+        myGame.round = setupRound(randomWord(gameWords));
+    }
+    // --------- end CALL BACK THE LOGIC
+
+    updateHTML();
+        
 
 } // ------------ end of onclick event
 
@@ -207,19 +214,20 @@ document.onkeyup = function (evt) {
 // setTimeout(hasWon(), 3000);
 
 
-
-
 // RESET GAME
-function gameReset(myGame) {
-    alert("reset pushed")
+function gameReset() {
     myGame.round.guessesLeft = 0;
-    if (isReset(0)) {
+    hasLost(myGame.round.guessesLeft);
+
+    // CHECKS IF GUESSES ARE LEFT OR HAS WON
+    if (isEndOfRound(myGame.round)) {
         myGame = startNewRound(myGame);
         myGame.round = setupRound(randomWord(gameWords));
-        alert("reset pushed")
     }
+    // --------- end CALL BACK THE LOGIC
+
+    updateHTML();
 
 } // ------------ end of button click
 
 
-// setup = myGame.round
