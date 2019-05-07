@@ -1,3 +1,9 @@
+/* 
+font-family: 'Permanent Marker', cursive;
+font-family: 'Enriqueta', serif;
+font-family: 'Ubuntu', sans-serif; 
+*/
+
 body {
     background-image: url(images/hamilton-background.jpg);
     background-size: cover;
@@ -11,11 +17,11 @@ body {
 } */
 
 .title-eb {
-    width: 200px;
+    width: 300px;
 }
 
 .title-text-eb {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Enriqueta', serif;
 }
 
 h1 {
@@ -23,7 +29,7 @@ h1 {
 }
 
 .button-container-eb {
-    border-top: 3px solid black;
+    border-top: 2px solid black;
 }
 
 .display-hidden-eb {
@@ -35,8 +41,21 @@ h1 {
 }
 
 .para-eb {
+    font-family: 'Ubuntu', sans-serif;
     color: white;
+    font-size: 18px;
 }
+
+.span-eb {
+    border: 2px solid black;
+    font-family: 'Enriqueta', serif;
+    background: #ffffff50;
+}
+
+.button-text-eb {
+    font-size: 14px;
+}
+
 
 /* .puzzle-eb {
 

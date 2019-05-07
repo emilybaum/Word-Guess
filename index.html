@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Word Guess</title>
+    <link href="https://fonts.googleapis.com/css?family=Enriqueta|Permanent+Marker|Ubuntu" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <script src="logic.js"></script>
@@ -29,8 +30,8 @@
         <div class="row"> 
 
             <!-- puzzle state blanks -->
-            <div class="col-md-6 text-center my-auto p-2 section-eb">
-                <h2 class="puzzle-eb"><span id="puzzle-state"> </span></h2>
+            <div class="col-md-6 text-center my-3 p-2 section-eb">
+                <h2 class="puzzle-eb"><span id="puzzle-state" class="p-4 span-eb"> </span></h2>
             </div>
 
             <!-- keeping track of game state -->
@@ -75,7 +76,11 @@
 
             <!-- hidden column 2 -->
             <div class="col-sm-2 mx-auto">
-                <!-- insert card -->
+                <div id="card2-eb" class="card display-hidden-eb">
+                    <div class="card-body">
+                        Test.
+                    </div>
+                </div>
             </div> <!-- end hidden column 2 -->
 
             <!-- hidden column 3 -->
@@ -94,12 +99,19 @@
 
         </div> <!-- end row for header -->
     
-      
+    <div class="row">
+    
+        <div class="col-sm-12 mx-auto text-center mt-5">
+            <img src="images/home-silo.svg" width="60%">
+        </div>
+    </div> <!-- end button row-->
+    
 
         <!-- button row -->
         <div class="row">
-            <div class="col-sm-12 mx-auto text-center mt-3 p-2 button-container-eb">
-                <div><button onclick="gameReset()">Give up and start over...</button></div>
+            
+            <div class="col-sm-12 mx-auto text-center pt-2 button-container-eb">
+                <div><button type="button" class="btn btn-dark" onclick="gameReset()"><p class="mb-0 button-text-eb">Give up and start over...</p></button></div>
             </div>
         </div> <!-- end button row-->
 

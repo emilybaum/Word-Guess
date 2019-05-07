@@ -142,14 +142,18 @@ var myGame = setupGame(gameWords, 0, 0);
 // USER INTERACTIONS
 
 // Uses the ramdom word and displays the empty blanks
-var puzzleState = document.getElementById("puzzle-state").innerHTML = myGame.round.puzzleState.join(" ");
+/**
+ * displays intial puzzleDtate on the screen
+ */
+window.onload = function () {
+    var puzzleState = document.getElementById("puzzle-state").innerHTML = myGame.round.puzzleState.join(" ");
+};
 
 // logs the object for this game round
 console.log(myGame);
 
-
 /**
- * Provides some feature.
+ * Updates the HTML IDs for each piece of contnet - puzzleState, wrongGuesses, wins, losses.
  */
 function updateHTML() {
     // Uses the ramdom word and displays the empty blanks
@@ -166,11 +170,13 @@ function updateHTML() {
 
     // Displays the updated object for number of guesses left
     document.getElementById("guesses-left").innerText = myGame.round.guessesLeft;
-
-}
+};
 
 // start of key being pressed by the user
 var keyPressed;
+/**
+ * triggers all game related functions onkeyup
+ */
 document.onkeyup = function (evt) {
     keyPressed = evt.key.toLowerCase() 
     var flag = false
@@ -189,7 +195,7 @@ document.onkeyup = function (evt) {
     console.log("The " + keyPressed + " key was pressed");
 
 
-        // CALL BACK THE LOGIC
+    // CALL BACK THE LOGIC
     isCorrectGuess(myGame.round.word, keyPressed);
     fillBlanks(myGame.round.word, myGame.round.puzzleState, keyPressed);
     updateRound(myGame.round, keyPressed);
@@ -207,9 +213,8 @@ document.onkeyup = function (evt) {
     updateHTML();
 
     displayCard1();
-        
-
-} // ------------ end of onclick event
+    
+}; // ------------ end of onclick event
 
 
 // setTimeout(hasWon(), 3000);
@@ -229,15 +234,23 @@ function gameReset() {
 
     updateHTML();
 
-} // ------------ end of button click
+}; // ------------ end of button click
 
-// edit this to make button display or not disaply 
-// need to add a class for display to be listed AFTER the 
+
+
+// make display cards show
 function displayCard1() {
-    var x = document.getElementById("#card1-eb");
-    if (myGame.round.wins >= 1) {
-        element.classList.add("display-visible-eb")
-        console.log("displayCard ran")
-    }        
-    
-}
+    if (myGame.losses >= 2) {
+        document.getElementById("card1-eb").classList.add("display-visible-eb");
+    }
+    if (myGame.losses >= 4) {
+        document.getElementById("card2-eb").classList.add("display-visible-eb");
+    }
+    if (myGame.wins >= 6) {
+        document.getElementById("card3-eb").classList.add("display-visible-eb");
+    }
+    if (myGame.wins >= 8) {
+        document.getElementById("card4-eb").classList.add("display-visible-eb");
+    }
+};
+
