@@ -141,7 +141,8 @@ var myGame = setupGame(gameWords, 0, 0);
  * displays intial puzzleState on the screen
  */
 window.onload = function () {
-    var puzzleState = document.getElementById("puzzle-state").innerHTML = myGame.round.puzzleState.join(" ");
+    // var puzzleState = 
+    document.getElementById("puzzle-state").innerHTML = myGame.round.puzzleState.join(" ");
 };
 
 // logs the object for this game round
