@@ -133,9 +133,9 @@ var myGame = setupGame(gameWords, 0, 0);
 
 // USER INTERACTIONS
 
-// Uses the ramdom word and displays the empty blanks
+// Including window.onload breaks the "test", but eliminates the .innerHTML error that would display prior to using it... so I kept linke 139 in here becuase it's cleaner.
 /**
- * displays intial puzzleDtate on the screen
+ * displays intial puzzleState on the screen
  */
 window.onload = function () {
     var puzzleState = document.getElementById("puzzle-state").innerHTML = myGame.round.puzzleState.join(" ");
@@ -152,7 +152,7 @@ function updateHTML() {
     document.getElementById("puzzle-state").innerText = myGame.round.puzzleState.join(" ");
 
     // Displays the updated object for wrong guesses from user
-    document.getElementById("wrong-guesses").innerText = myGame.round.wrongGuesses;
+    document.getElementById("wrong-guesses").innerText = myGame.round.wrongGuesses.join(" ");
 
     // Displays the updated object for total wins
     document.getElementById("win-counter").innerText = myGame.wins;
