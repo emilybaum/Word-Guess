@@ -13,9 +13,11 @@ function randomWord(gameWords) {
 function isCorrectGuess(word, letter) {
     for (var i = 0; i < word.length; i++) {
         if (word[i] === letter) {
-            return true;
+            correctClick.play();
+            return true;     
         }
     }
+    wrongClick.play();
     return false;
 }
 
@@ -118,6 +120,7 @@ function startNewRound(game) {
     var puzzleState = game.round.puzzleState;
     if (hasWon(puzzleState) === true) {
         ++game.wins;
+        winRound.play();
         alert("You did it! The word is " + game.round.word);
     }
     else {
@@ -143,6 +146,13 @@ window.onload = function () {
 
 // logs the object for this game round
 console.log(myGame);
+
+// play sounds 
+var winRound = new Audio('sounds/Winning-brass-fanfare-sound-effect.mp3');
+var wrongClick = new Audio('sounds/Button-click-sound-effect.mp3');
+var correctClick = new Audio('sounds/Bell-ding-sound-effect.mp3');
+var myShot = new Audio('sounds/My Shot.mp3');
+
 
 /**
  * Updates the HTML IDs for each piece of contnet - puzzleState, wrongGuesses, wins, losses.
@@ -182,7 +192,7 @@ document.onkeyup = function (evt) {
     }
 
 
-    console.log("The " + keyPressed + " key was pressed");
+    console.log(keyPressed + " key was pressed");
 
 
     // CALL BACK THE LOGIC
@@ -199,6 +209,7 @@ document.onkeyup = function (evt) {
         myGame.round = setupRound(randomWord(gameWords));
     }
     // --------- end CALL BACK THE LOGIC
+
 
     updateHTML();
 
@@ -221,6 +232,8 @@ function gameReset() {
         myGame.round = setupRound(randomWord(gameWords));
     }
     // --------- end CALL BACK THE LOGIC
+
+    myShot.play();
 
     updateHTML();
 
