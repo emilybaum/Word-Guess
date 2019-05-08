@@ -22,16 +22,29 @@
             <!-- content container -->
             <div class="col-sm-12 mx-auto">
                 
-                <h1 class="text-center card-header mt-3 mb-5 title-text-eb"> <img src="images/hamilton-title-notag.png" class="title-eb"> Word Guess</h1>
+                <h1 class="text-center card-header mt-3 mb-2 title-text-eb"> <img src="images/hamilton-title-notag.png" class="title-eb"> Word Guess</h1>
             </div> <!-- end content container -->
         </div> <!-- end row for header -->
 
+        <!-- instructions row -->
+        <div class="row">
+            <div class="col-sm-8 mx-auto text-center mt-1">
+                <p class="para-eb pb-3 instruct-eb">
+                    Your goal is to type letters to fill in the puzzle. When you guess a correct letter, the puzzle will automatically update and you get a <strong>win!</strong> 
+                    Each round you will have <strong>9 chances to guess the word</strong>, otherwise you lose. Good luck! 
+                </p>
+            </div>
+        </div>
+        <!-- end people image row-->      
+        
         <!-- row for main game content -->
         <div class="row"> 
 
             <!-- puzzle state blanks -->
-            <div class="col-md-6 text-center my-3 p-2 section-eb">
-                <h2 class="puzzle-eb"><span id="puzzle-state" class="p-4 span-eb"> </span></h2>
+            <div class="col-md-6 text-center my-3 p-2">
+                <div class="float-right">
+                    <h2 class="puzzle-eb shadow-lg"><span id="puzzle-state" class="p-4 span-eb"> </span></h2>
+                </div>
             </div>
 
             <!-- keeping track of game state -->
@@ -58,66 +71,68 @@
             
         </div> <!-- end main game content -->
 
-        <!-- row for hidden elements -->
+        <!-- row for hidden/visible card elements -->
         <div class="row">
 
-            <!-- hidden column FIRST -->
-            <div class="col-sm-1 mx-auto">
-            </div> <!-- end hidden column FIRST -->
-
-            <!-- hidden column 1 -->
-            <div class="col-sm-2 mx-auto">
-                <div id="card1-eb" class="card display-hidden-eb">
+            <!-- card column 1 -->
+            <div class="col-sm-3 mx-auto">
+                <div id="card1-eb" class="card mt-4 display-hidden-eb">
                     <div class="card-body" >
-                        Test.
+                        <p class="mb-0"><strong>Way to take a shot!</strong> Keep winning to display some Hamilton related things</p>
                     </div>
-                </div>
-            </div> <!-- end hidden column 1 -->
+                </div>  
+            </div> 
+            <!-- end card column 1 -->
 
-            <!-- hidden column 2 -->
-            <div class="col-sm-2 mx-auto">
-                <div id="card2-eb" class="card display-hidden-eb">
+            <!-- card column 2 -->
+            <div class="col-sm-3 mx-auto">
+                <div id="card2-eb" class="card mt-4 display-hidden-eb">
                     <div class="card-body">
-                        Test.
+                        <p class="mb-0"><strong>Wow, 2 wins!</strong> You should really consider entering the <strong><a href="https://www.luckyseat.com/hamilton-ny/"  target=”_blank”>Hamilton Lottery</a></strong> for $10 tickets. Totally worth it.</p>
                     </div>
                 </div>
-            </div> <!-- end hidden column 2 -->
+            </div> 
+            <!-- end card column 2 -->
 
-            <!-- hidden column 3 -->
-            <div class="col-sm-2 mx-auto">
-                <!-- insert card -->
-            </div> <!-- end hidden column 3 -->
+            <!-- card column 3 -->
+            <div class="col-sm-3 mx-auto">
+                <div id="card3-eb" class="card mt-4 display-hidden-eb">
+                    <div class="card-body">
+                        <p class="mb-0"><strong>You're killing it!</strong> Speaking of $10, did you know that Hamilton is the face of the bill?</p>
+                    </div>
+                </div>
+            </div>
+            <!-- end card column 3 -->
 
-            <!-- hidden column 4 -->
-            <div class="col-sm-2 mx-auto">
-                <!-- insert card -->
-            </div> <!-- end hidden column 4 -->
+            <!-- card column 4 -->
+            <div class="col-sm-3 mx-auto">
+                <div id="card4-eb" class="card mt-4 display-hidden-eb">
+                    <div class="card-body">
+                        <p class="mb-0"><strong>Impressive!</strong> I bet you've listened to the Hamilton soundtrak, but take a moment to <strong><a href="https://genius.com/albums/Original-broadway-cast-of-hamilton/Hamilton-original-broadway-cast-recording">explore historical genius of the lyrics</a></strong></p>
+                    </div>
+                </div>
+            </div>
+            <!-- end card column 4 -->
 
-            <!-- hidden column LAST -->
-            <div class="col-sm-1 mx-auto">
-            </div> <!-- end hidden column LAST -->
-
-        </div> <!-- end row for header -->
+        </div> <!-- end row for hidden/visible card elements -->
     
-    <div class="row">
-    
-        <div class="col-sm-12 mx-auto text-center mt-5">
-            <img src="images/home-silo.svg" width="60%">
-        </div>
-    </div> <!-- end button row-->
+        <!-- people image row -->
+        <div class="row">
+            <div class="col-sm-12 mx-auto text-center mt-5">
+                <img src="images/home-silo.svg" width="60%">
+            </div>
+        </div> 
+        <!-- end people image row-->
     
 
         <!-- button row -->
         <div class="row">
             
-            <div class="col-sm-12 mx-auto text-center pt-2 button-container-eb">
-                <div><button type="button" class="btn btn-dark" onclick="gameReset()"><p class="mb-0 button-text-eb">Give up and start over...</p></button></div>
+            <div class="col-sm-12 mx-auto text-center pt-4 button-container-eb">
+                <div><button type="button" class="btn btn-dark" onclick="gameReset()"><p class="mb-0 button-text-eb">Give up my shot...</p></button></div>
+                <img class="mt-4" width="200px" src="images/hamilton-script.png">
             </div>
         </div> <!-- end button row-->
-
-
-<!-- lottery ny: https://www.luckyseat.com/hamilton-ny/ -->
-
 
     </div> <!-- end main container-->
 

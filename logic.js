@@ -1,5 +1,5 @@
 // 1.0 ARRAY OF WORDS
-var gameWords = ["alexander", "hamilton", "duel", "america", "theodosia", "jefferson", "angalica", "writing", "lafayette", "burr", "madison", "eliza", "hercules", "mulligan", "federalist", "washington", "treasury", "george", "reynolds", "peggy", "satisfied", "nonstop", "burn", "kingscollege"];
+var gameWords = ["alexander", "hamilton", "duel", "america", "theodosia", "jefferson", "angelica", "writing", "lafayette", "burr", "madison", "eliza", "hercules", "mulligan", "federalist", "washington", "treasury", "george", "reynolds", "peggy", "satisfied", "nonstop", "burn", "schuyler", "broadway", "musical", "helpless", "cabinet", "hurricane", "caribbea", "shot", "miranda"];
 var validChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 // 1.1 RANDOM WORD GENERATOR
@@ -101,14 +101,6 @@ function isEndOfRound(setup) {
     return false;
 }
 
-// function isReset (pushreset) {
-//     if (pushreset === 0) {
-//         return true;
-//     }
-// }
-
-
-
 // 1.10 SETUP GAME
 function setupGame(gameWords, wins, losses) {
     var game = {
@@ -180,15 +172,13 @@ var keyPressed;
 document.onkeyup = function (evt) {
     keyPressed = evt.key.toLowerCase() 
     var flag = false
-    for (var i = 0; i < validChar.length; i++) {
-        
+    for (var i = 0; i < validChar.length; i++) {   
         if (keyPressed === validChar[i]) {
-            flag = true
-            
+            flag = true          
         }
     }
     if (flag === false) {
-        alert("Only use valid characters for your guess! You just wasted a guess");
+        alert("Don't throw away your shot! Use only valid letters, or you'll lose another guess.");
     }
 
 
@@ -240,16 +230,16 @@ function gameReset() {
 
 // make display cards show
 function displayCard1() {
-    if (myGame.losses >= 2) {
+    if (myGame.wins >= 1) {
         document.getElementById("card1-eb").classList.add("display-visible-eb");
     }
-    if (myGame.losses >= 4) {
+    if (myGame.wins >= 2) {
         document.getElementById("card2-eb").classList.add("display-visible-eb");
     }
-    if (myGame.wins >= 6) {
+    if (myGame.wins >= 3) {
         document.getElementById("card3-eb").classList.add("display-visible-eb");
     }
-    if (myGame.wins >= 8) {
+    if (myGame.wins >= 4) {
         document.getElementById("card4-eb").classList.add("display-visible-eb");
     }
 };
