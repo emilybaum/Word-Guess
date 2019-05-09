@@ -7,9 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Word Guess</title>
     <link href="https://fonts.googleapis.com/css?family=Enriqueta|Permanent+Marker|Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <script src="logic.js"></script>
 </head>
 
 <body>
@@ -71,6 +71,17 @@
             
         </div> <!-- end main game content -->
 
+        <!-- row for hidding winning the whole game -->
+        <div class="row">
+            <div class="col-sm-12 mx-auto">
+                <div id="card5-eb" class="card mt-4 display-hidden-eb">
+                    <div class="card-body tenWins">
+                        <p class="mb-0 text-center px-3 "><strong>You're a winner! I'm proud of you for being a true American and Hamilton aficionado!</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <!-- row for hidden/visible card elements -->
         <div class="row">
 
@@ -114,6 +125,9 @@
             </div>
             <!-- end card column 4 -->
 
+        
+
+
         </div> <!-- end row for hidden/visible card elements -->
     
         <!-- people image row -->
@@ -133,7 +147,7 @@
                 <img class="mt-4" width="200px" src="images/hamilton-script.png">
             </div>
         </div> <!-- end button row-->
-
+        
     </div> <!-- end main container-->
 
 <script src="logic.js" charset="utf-u"></script>

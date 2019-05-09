@@ -2,6 +2,7 @@
 font-family: 'Permanent Marker', cursive;
 font-family: 'Enriqueta', serif;
 font-family: 'Ubuntu', sans-serif; 
+font-family: 'Marck Script', cursive;
 */
 
 body {
@@ -78,4 +79,12 @@ h1 {
 .stong-eb {
     color: black;
 }
+
+.tenWins {
+    font-family: 'Marck Script', cursive;
+    font-size: 40px;
+    background-color: #55311390;
+    color: #fff;
+}
+
 

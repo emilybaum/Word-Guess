@@ -136,14 +136,7 @@ var myGame = setupGame(gameWords, 0, 0);
 
 // USER INTERACTIONS
 
-// Including window.onload breaks the "test", but eliminates the .innerHTML error that would display prior to using it... so I kept linke 139 in here becuase it's cleaner.
-/**
- * displays intial puzzleState on the screen
- */
-window.onload = function () {
-    // var puzzleState = 
-    document.getElementById("puzzle-state").innerHTML = myGame.round.puzzleState.join(" ");
-};
+var puzzleState = document.getElementById("puzzle-state").innerHTML = myGame.round.puzzleState.join(" ");
 
 // logs the object for this game round
 console.log(myGame);
@@ -211,7 +204,6 @@ document.onkeyup = function (evt) {
     }
     // --------- end CALL BACK THE LOGIC
 
-
     updateHTML();
 
     displayCard1();
@@ -241,7 +233,6 @@ function gameReset() {
 }; // ------------ end of button click
 
 
-
 // make display cards show
 function displayCard1() {
     if (myGame.wins >= 1) {
@@ -256,5 +247,9 @@ function displayCard1() {
     if (myGame.wins >= 4) {
         document.getElementById("card4-eb").classList.add("display-visible-eb");
     }
+    if (myGame.wins >= 10) {
+        document.getElementById("card5-eb").classList.add("display-visible-eb");
+    }
+    
 };
 
