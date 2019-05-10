@@ -11,3 +11,10 @@ Be on the look out for pops with some Hamilton related things too.
 
 Good luck!
 
+screen shot: https://i.gyazo.com/ca58e4327638e04a5e0ba482525d97f4.jpg
+
+![](demo-main-page.gif)
+
+![](demo-ten-wins.gif)
+
+

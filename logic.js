@@ -139,7 +139,7 @@ var myGame = setupGame(gameWords, 0, 0);
 var puzzleState = document.getElementById("puzzle-state").innerHTML = myGame.round.puzzleState.join(" ");
 
 // logs the object for this game round
-console.log(myGame);
+console.log(myGame.round.word);
 
 // play sounds 
 var winRound = new Audio('sounds/Winning-brass-fanfare-sound-effect.mp3');
@@ -186,7 +186,8 @@ document.onkeyup = function (evt) {
     }
 
 
-    console.log(keyPressed + " key was pressed");
+    console.log(keyPressed + " was pressed");
+    console.log(myGame.round.word);
 
 
     // CALL BACK THE LOGIC
