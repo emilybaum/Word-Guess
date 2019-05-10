@@ -13,8 +13,10 @@ Good luck!
 
 screen shot: https://i.gyazo.com/ca58e4327638e04a5e0ba482525d97f4.jpg
 
+Demo of the main page:
 ![](demo-main-page.gif)
 
+Demo of what happens when you get 10 wins!
 ![](demo-ten-wins.gif)
 
 
